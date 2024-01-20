@@ -22,8 +22,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-green-400">
-      <h1>My fullstack Prayer Times App</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="text-4xl my-4">My fullstack Prayer Times App</h1>
       <p>Fajr: {prayerTimes.fajr}</p>
       <p>Dhuhr: {prayerTimes.dhuhr}</p>
       <p>Asr: {prayerTimes.asr}</p>
