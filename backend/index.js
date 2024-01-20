@@ -15,7 +15,6 @@ app.get("/", (req, res) => {
     "X-RapidAPI-Key": "dea0d1e227mshdef66c06d9d9811p19a79ajsnd0169e064d08",
     "X-RapidAPI-Host": "muslimsalat.p.rapidapi.com",
   });
-  //
 
   request.end(function (response) {
     if (response.error) {
