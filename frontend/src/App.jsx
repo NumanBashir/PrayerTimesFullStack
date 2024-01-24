@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Clock from "./components/Clock";
 
 const App = () => {
   const [prayerTimes, setPrayerTimes] = useState({
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <h1 className="text-4xl my-4">My fullstack Prayer Times App</h1>
+      <Clock />
       <p>Fajr: {prayerTimes.fajr}</p>
       <p>Dhuhr: {prayerTimes.dhuhr}</p>
       <p>Asr: {prayerTimes.asr}</p>
@@ -34,3 +36,6 @@ const App = () => {
 };
 
 export default App;
+
+// TODO: Show next prayer
+// TODO: Time until next prayer (count down)
