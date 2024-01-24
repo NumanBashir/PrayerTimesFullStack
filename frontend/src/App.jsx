@@ -35,8 +35,8 @@ const App = () => {
     return date;
   };
 
-  const newDateTime = convertToDateTime(prayerTimes.fajr);
-  console.log(typeof newDateTime);
+  const newTime = convertToDateTime(fajr);
+  console.log(newTime);
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -47,7 +47,7 @@ const App = () => {
       <p>Asr: {asr}</p>
       <p>Maghrib: {maghrib}</p>
       <p>Isha: {isha}</p>
-      <h1 className="text-4xl my-4">Next prayer is: </h1>
+      <h1 className="text-4xl my-4">Next prayer is: {maghrib}</h1>
     </div>
   );
 };

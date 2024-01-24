@@ -13,8 +13,7 @@ const Clock = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-3xl">Current time:</h1>
-      <h1 className="text-2xl mb-4">{time}</h1>
+      <h1 className="text-3xl">Current time: {time}</h1>
     </div>
   );
 };
