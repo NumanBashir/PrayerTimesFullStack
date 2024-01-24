@@ -22,15 +22,32 @@ const App = () => {
       });
   }, []);
 
+  const fajr = prayerTimes.fajr;
+  const dhuhr = prayerTimes.dhuhr;
+  const asr = prayerTimes.asr;
+  const maghrib = prayerTimes.maghrib;
+  const isha = prayerTimes.isha;
+
+  const convertToDateTime = (timeString) => {
+    const [hours, minutes] = timeString.split(":").map(Number);
+    const date = new Date();
+    date.setHours(hours, minutes, 0);
+    return date;
+  };
+
+  const newDateTime = convertToDateTime(prayerTimes.fajr);
+  console.log(typeof newDateTime);
+
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-4xl my-4">My fullstack Prayer Times App</h1>
+      <h1 className="text-4xl my-4">Prayer Times App</h1>
       <Clock />
-      <p>Fajr: {prayerTimes.fajr}</p>
-      <p>Dhuhr: {prayerTimes.dhuhr}</p>
-      <p>Asr: {prayerTimes.asr}</p>
-      <p>Maghrib: {prayerTimes.maghrib}</p>
-      <p>Isha: {prayerTimes.isha}</p>
+      <p>Fajr: {fajr}</p>
+      <p>Dhuhr: {dhuhr}</p>
+      <p>Asr: {asr}</p>
+      <p>Maghrib: {maghrib}</p>
+      <p>Isha: {isha}</p>
+      <h1 className="text-4xl my-4">Next prayer is: </h1>
     </div>
   );
 };
