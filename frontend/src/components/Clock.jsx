@@ -1,22 +1,37 @@
-import React, { useState } from "react";
-import { format } from "date-fns";
+import React, { useState, useEffect } from "react";
 
-const Clock = () => {
-  let time = new Date().toLocaleTimeString();
-  // let newTime = format(new Date(), "HH:mm:ss");
+const Clock = ({ nextPrayerTime }) => {
+  const [currentTime, setCurrentTime] = useState(new Date());
 
-  const [currentTime, setCurrentTime] = useState();
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
 
-  const updateTime = () => {
-    let time = new Date().toLocaleTimeString();
-    setCurrentTime(time);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getTimeUntilNextPrayer = () => {
+    if (!nextPrayerTime) {
+      return "Loading next prayer time...";
+    }
+
+    const timeDifference = nextPrayerTime - currentTime;
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    return `${hours}h ${minutes}m ${seconds}s until next prayer`;
   };
-
-  setInterval(updateTime, 1000);
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-3xl">Current time: {time}</h1>
+      <h1 className="text-3xl">
+        Current time: {currentTime.toLocaleTimeString()}
+      </h1>
+      <h2 className="text-2xl">{getTimeUntilNextPrayer()}</h2>
     </div>
   );
 };

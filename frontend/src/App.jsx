@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Clock from "./components/Clock";
-import { format } from "date-fns";
 
 const App = () => {
   const [prayerTimes, setPrayerTimes] = useState({
@@ -12,51 +11,63 @@ const App = () => {
     isha: "",
   });
 
+  const [nextPrayer, setNextPrayer] = useState({ name: "", time: "" });
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/")
       .then((response) => {
         setPrayerTimes(response.data);
+        findNextPrayer(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  const fajr = prayerTimes.fajr;
-  const dhuhr = prayerTimes.dhuhr;
-  const asr = prayerTimes.asr;
-  const maghrib = prayerTimes.maghrib;
-  const isha = prayerTimes.isha;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      findNextPrayer(prayerTimes);
+    }, 60000); // Update every minute
 
-  const fajrTime = Date.parse(fajr);
-  console.log(fajrTime);
+    return () => clearInterval(interval);
+  }, [prayerTimes]);
 
-  const convertToDateTime = (timeString) => {
-    const [hours, minutes] = timeString.split(":").map(Number);
-    const date = new Date();
-    date.setHours(hours, minutes, 0);
-    return date;
+  const findNextPrayer = (times) => {
+    const now = new Date();
+    let closestTime = Infinity;
+    let closestPrayer = "";
+
+    for (const [key, value] of Object.entries(times)) {
+      const prayerTime = new Date(now.toDateString() + " " + value);
+      if (prayerTime > now && prayerTime < closestTime) {
+        closestTime = prayerTime;
+        closestPrayer = key;
+      }
+    }
+
+    if (closestTime !== Infinity) {
+      setNextPrayer({
+        name: closestPrayer.charAt(0).toUpperCase() + closestPrayer.slice(1),
+        time: closestTime,
+      });
+    } else {
+      // Handle next day's prayer times if needed
+    }
   };
-
-  // const newTime = convertToDateTime(fajr);
-  // console.log(newTime);
 
   return (
     <div className="flex flex-col justify-center items-center">
       <h1 className="text-4xl my-4">Prayer Times App</h1>
-      <Clock />
-      <p>Fajr: {fajr}</p>
-      <p>Dhuhr: {dhuhr}</p>
-      <p>Asr: {asr}</p>
-      <p>Maghrib: {maghrib}</p>
-      <p>Isha: {isha}</p>
-      <h1 className="text-4xl my-4">Next prayer is: {maghrib}</h1>
+      <Clock nextPrayerTime={nextPrayer.time} />
+      <p>Fajr: {prayerTimes.fajr}</p>
+      <p>Dhuhr: {prayerTimes.dhuhr}</p>
+      <p>Asr: {prayerTimes.asr}</p>
+      <p>Maghrib: {prayerTimes.maghrib}</p>
+      <p>Isha: {prayerTimes.isha}</p>
+      <h1 className="text-4xl my-4">Next prayer is: {nextPrayer.name}</h1>
     </div>
   );
 };
 
 export default App;
-
-// TODO: Show next prayer
-// TODO: Time until next prayer (count down)
