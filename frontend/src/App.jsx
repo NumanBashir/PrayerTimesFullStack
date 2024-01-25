@@ -29,6 +29,9 @@ const App = () => {
   const maghrib = prayerTimes.maghrib;
   const isha = prayerTimes.isha;
 
+  const fajrTime = Date.parse(fajr);
+  console.log(fajrTime);
+
   const convertToDateTime = (timeString) => {
     const [hours, minutes] = timeString.split(":").map(Number);
     const date = new Date();
@@ -36,8 +39,8 @@ const App = () => {
     return date;
   };
 
-  const newTime = convertToDateTime(fajr);
-  console.log(newTime);
+  // const newTime = convertToDateTime(fajr);
+  // console.log(newTime);
 
   return (
     <div className="flex flex-col justify-center items-center">

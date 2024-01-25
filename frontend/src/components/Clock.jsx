@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { format } from "date-fns";
 
 const Clock = () => {
   let time = new Date().toLocaleTimeString();
+  // let newTime = format(new Date(), "HH:mm:ss");
+
   const [currentTime, setCurrentTime] = useState();
 
   const updateTime = () => {
