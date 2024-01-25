@@ -2,82 +2,114 @@ import React from "react";
 
 const RakatTable = () => {
   return (
-    <div>
-      <h1 className="flex flex-col justify-center items-center text-4xl my-8">
+    <div className="mb-16">
+      <h1 className="flex justify-center items-center text-4xl my-8 text-black">
         Table of Rakats
       </h1>
-      <div>
-        <table>
-          <tr>
-            <th>Name of Prayer</th>
-            <th>Sunnat</th>
-            <th>Fardh</th>
-            <th>Sunnat</th>
-            <th>Nafl</th>
-            <th>Witr</th>
-            <th>Nafl</th>
-            <th>Total Rakats</th>
-          </tr>
-          <tr>
-            <th>Fajr</th>
-            <th>2</th>
-            <th>2</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>4</th>
-          </tr>
-          <tr>
-            <th>Dhuhr</th>
-            <th>4</th>
-            <th>4</th>
-            <th>2</th>
-            <th>2</th>
-            <th>-</th>
-            <th>-</th>
-            <th>12</th>
-          </tr>
-          <tr>
-            <th>Asr</th>
-            <th>4</th>
-            <th>4</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>8</th>
-          </tr>
-          <tr>
-            <th>Maghrib</th>
-            <th>-</th>
-            <th>3</th>
-            <th>2</th>
-            <th>2</th>
-            <th>-</th>
-            <th>-</th>
-            <th>7</th>
-          </tr>
-          <tr>
-            <th>Isha</th>
-            <th>4</th>
-            <th>4</th>
-            <th>2</th>
-            <th>2</th>
-            <th>3</th>
-            <th>2</th>
-            <th>17</th>
-          </tr>
-          <tr>
-            <th>Jummah</th>
-            <th>4</th>
-            <th>2</th>
-            <th>4+2</th>
-            <th>-</th>
-            <th>-</th>
-            <th>2</th>
-            <th>14</th>
-          </tr>
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="w-full text-sm text-left text-black">
+          <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-700 dark:text-black">
+            <tr>
+              <th scope="col" className="px-6 py-3 text-center">
+                Name of Prayer
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Sunnat
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Fardh
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Sunnat
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Nafl
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Witr
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Nafl
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Total Rakats
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+              <td className="px-6 py-4 text-center font-medium text-black">
+                Fajr
+              </td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">4</td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+              <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
+                Dhuhr
+              </td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">12</td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+              <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
+                Asr
+              </td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">8</td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+              <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
+                Maghrib
+              </td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">3</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">7</td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+              <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
+                Isha
+              </td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">3</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">17</td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+              <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
+                Jummah
+              </td>
+              <td className="px-6 py-4 text-center">4</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">4+2</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">-</td>
+              <td className="px-6 py-4 text-center">2</td>
+              <td className="px-6 py-4 text-center">14</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -85,3 +117,6 @@ const RakatTable = () => {
 };
 
 export default RakatTable;
+
+// TODO: Wajib + Muakkadah hover over meaning
+// TODO: Meaning of fardh, sunnat (two types), witr and nafl
