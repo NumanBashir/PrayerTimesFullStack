@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Clock from "./components/Clock";
+import RakatTable from "./components/RakatTable";
 
 const App = () => {
   const [prayerTimes, setPrayerTimes] = useState({
@@ -66,6 +67,7 @@ const App = () => {
       <p>Maghrib: {prayerTimes.maghrib}</p>
       <p>Isha: {prayerTimes.isha}</p>
       <h1 className="text-4xl my-4">Next prayer is: {nextPrayer.name}</h1>
+      <RakatTable />
     </div>
   );
 };
