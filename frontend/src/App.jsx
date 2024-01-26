@@ -53,7 +53,11 @@ const App = () => {
         time: closestTime,
       });
     } else {
-      // Handle next day's prayer times if needed
+      // No more prayers for today
+      setNextPrayer({
+        name: "No more prayers for today",
+        time: "",
+      });
     }
   };
 

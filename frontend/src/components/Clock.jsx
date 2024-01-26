@@ -13,7 +13,7 @@ const Clock = ({ nextPrayerTime }) => {
 
   const getTimeUntilNextPrayer = () => {
     if (!nextPrayerTime) {
-      return "Loading next prayer time...";
+      return "";
     }
 
     const timeDifference = nextPrayerTime - currentTime;

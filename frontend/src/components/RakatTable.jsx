@@ -8,7 +8,7 @@ const RakatTable = () => {
       </h1>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-black">
-          <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-700 dark:text-black">
+          <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
             <tr>
               <th scope="col" className="px-6 py-3 text-center">
                 Name of Prayer
@@ -37,8 +37,8 @@ const RakatTable = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
-              <td className="px-6 py-4 text-center font-medium text-black">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold dark:text-white">
+              <td className="px-6 py-4 text-center font-medium text-black dark:text-white">
                 Fajr
               </td>
               <td className="px-6 py-4 text-center">2</td>
@@ -49,7 +49,7 @@ const RakatTable = () => {
               <td className="px-6 py-4 text-center">-</td>
               <td className="px-6 py-4 text-center">4</td>
             </tr>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold dark:text-white">
               <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
                 Dhuhr
               </td>
@@ -61,7 +61,7 @@ const RakatTable = () => {
               <td className="px-6 py-4 text-center">-</td>
               <td className="px-6 py-4 text-center">12</td>
             </tr>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold dark:text-white">
               <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
                 Asr
               </td>
@@ -73,7 +73,7 @@ const RakatTable = () => {
               <td className="px-6 py-4 text-center">-</td>
               <td className="px-6 py-4 text-center">8</td>
             </tr>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold dark:text-white">
               <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
                 Maghrib
               </td>
@@ -85,7 +85,7 @@ const RakatTable = () => {
               <td className="px-6 py-4 text-center">-</td>
               <td className="px-6 py-4 text-center">7</td>
             </tr>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold dark:text-white">
               <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
                 Isha
               </td>
@@ -97,7 +97,7 @@ const RakatTable = () => {
               <td className="px-6 py-4 text-center">2</td>
               <td className="px-6 py-4 text-center">17</td>
             </tr>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-bold dark:text-white">
               <td className="px-6 py-4 text-center font-medium text-gray-900 dark:text-white">
                 Jummah
               </td>
