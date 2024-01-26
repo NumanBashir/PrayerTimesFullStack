@@ -111,6 +111,15 @@ const RakatTable = () => {
             </tr>
           </tbody>
         </table>
+        <div class="group relative p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          Wajib*
+          <div
+            class="absolute hidden group-hover:block bg-white border border-gray-200 p-2 rounded-lg text-sm shadow-lg 
+            bottom-full mb-2 left-0"
+          >
+            The meaning of Wajib is...
+          </div>
+        </div>
       </div>
     </div>
   );
