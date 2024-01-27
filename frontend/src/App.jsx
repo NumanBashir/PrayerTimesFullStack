@@ -77,3 +77,5 @@ const App = () => {
 };
 
 export default App;
+
+// TODO: Islamic month and date + Current day and date (hijri and normal calendar)

@@ -113,15 +113,6 @@ const RakatTable = () => {
         </table>
       </div>
       <div class="group relative p-4 my-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-        Wajib**
-        <div
-          class="absolute hidden group-hover:block bg-white border border-gray-200 p-2 rounded-lg text-sm shadow-lg 
-            bottom-full mb-2 left-0"
-        >
-          An obligatory act, with failure to perform it being sinful
-        </div>
-      </div>
-      <div class="group relative p-4 my-4 border border-gray-200 rounded-lg hover:bg-gray-50">
         Muakkadah*
         <div
           class="absolute hidden group-hover:block bg-white border border-gray-200 p-2 rounded-lg text-sm shadow-lg 
@@ -129,6 +120,15 @@ const RakatTable = () => {
         >
           A confirmed sunnah that the Prophet (pbuh) continuously performed and
           almost never abandoned
+        </div>
+      </div>
+      <div class="group relative p-4 my-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+        Wajib**
+        <div
+          class="absolute hidden group-hover:block bg-white border border-gray-200 p-2 rounded-lg text-sm shadow-lg 
+            bottom-full mb-2 left-0"
+        >
+          An obligatory act, with failure to perform it being sinful
         </div>
       </div>
       <div className="border border-gray-200 grid grid-cols-2 gap-2 rounded-lg">
