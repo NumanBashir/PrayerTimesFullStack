@@ -131,6 +131,10 @@ const RakatTable = () => {
           almost never abandoned
         </div>
       </div>
+      <div className="border border-gray-200 grid grid-cols-2 gap-2 rounded-lg">
+        <div>Fardh</div>
+        <div>Mandatory</div>
+      </div>
     </div>
   );
 };
