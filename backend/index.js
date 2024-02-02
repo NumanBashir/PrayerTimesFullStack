@@ -34,3 +34,5 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// TODO: Be able to select city to change prayer location
